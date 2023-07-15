@@ -8,7 +8,8 @@ const ProductSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: [true, "Price is required"],
-        min: [0, "Price cannot be negative"] // can also validate min value on frontend
+        // can also validate min value on frontend
+        min: [0, "Price cannot be negative"]
     },
     description: {
         type: String,
@@ -16,6 +17,6 @@ const ProductSchema = new mongoose.Schema({
         minlength: [5, "Description must be at least 5 character long"]
     }
 }, {timestamp: true})
+// move to a constant so it turns green
 const Product = mongoose.model("Product", ProductSchema)
-
 module.exports = Product;

@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 const ProductForm = () => {
-
+    const navigator = useNavigate();
     const [ formData, setFormData ] = useState({
         title: "",
         price: '',
@@ -19,6 +20,7 @@ const ProductForm = () => {
                     price: '',
                     description: ''
                 })
+                navigator('/products')
             }).catch(err=> console.log(err))
     }
 
