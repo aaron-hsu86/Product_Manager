@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
-const ProductForm = () => {
-    const navigator = useNavigate();
+const ProductForm = (props) => {
+    const {createProduct} = props
     const [ formData, setFormData ] = useState({
         title: "",
         price: '',
@@ -20,7 +19,8 @@ const ProductForm = () => {
                     price: '',
                     description: ''
                 })
-                navigator('/products')
+                // reroute back to main to refresh data
+                createProduct();
             }).catch(err=> console.log(err))
     }
 

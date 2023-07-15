@@ -2,6 +2,7 @@ import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import Main from './views/Main';
 import ProductDisplay from './components/ProductDisplay';
+import ProductEdit from './components/ProductEdit';
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/products' element={<Main />} />        
         <Route path='/products/:id' element={<ProductDisplay />} />
-      </Routes>    
+        <Route path='/products/:id/edit' element={<ProductEdit />} />
+      </Routes>
     </div>
   );
 }
