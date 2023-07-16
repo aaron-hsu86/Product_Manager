@@ -26,6 +26,10 @@ const ProductList = (props) => {
                         <Link to={`/products/${product._id}/edit`}>
                             <button>Edit</button>
                         </Link>
+                        ---
+                        <button onClick={(e)=>{deleteProduct(product._id)}}>
+                            Delete
+                        </button>
                     </p>
                 })
             }
